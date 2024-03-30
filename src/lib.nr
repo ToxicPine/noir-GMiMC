@@ -65,7 +65,7 @@ pub fn encrypt<T, R>(gmimc_conf: GmimcConfig<R>, mut x: [Field; T], k: Field) ->
 
 pub fn decrypt<T, R>(gmimc_conf: GmimcConfig<R>, mut x: [Field; T], k: Field) -> [Field; T] {
     // otherwise key is too small
-    assert(modulus_num_bits() as u16 >= 128);
+    assert(modulus_num_bits() as u32 >= 128);
 
     let GmimcConfig {alpha, arc} = gmimc_conf;
 
